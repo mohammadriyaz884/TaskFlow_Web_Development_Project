@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow - a responsive productivity dashboard">
+  <title>TaskFlow — Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">✓</div>
+      <div>
+        <h1>TaskFlow</h1>
+        <p>Productivity Dashboard</p>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <span id="todayLabel"></span>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">STAY ORGANIZED</p>
+        <h2>Plan your day. <span>Get things done.</span></h2>
+        <p class="hero-text">Manage tasks, track progress, and keep your priorities in one simple dashboard.</p>
+      </div>
+      <div class="progress-card">
+        <div class="progress-info">
+          <span>Today's progress</span>
+          <strong id="progressPercent">0%</strong>
+        </div>
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span class="stat-icon">📋</span>
+        <div><small>Total Tasks</small><strong id="totalTasks">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">⏳</span>
+        <div><small>Pending</small><strong id="pendingTasks">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">✅</span>
+        <div><small>Completed</small><strong id="completedTasks">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">🔥</span>
+        <div><small>Completion Rate</small><strong id="completionRate">0%</strong></div>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3>My Tasks</h3>
+            <p>Add and manage your daily tasks.</p>
+          </div>
+          <button id="clearCompleted" class="text-btn">Clear completed</button>
+        </div>
+
+        <form id="taskForm" class="task-form">
+          <input id="taskInput" type="text" placeholder="What needs to be done?" maxlength="100" required>
+          <select id="priorityInput" aria-label="Priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+          </select>
+          <button type="submit" class="primary-btn">+ Add Task</button>
+        </form>
+
+        <div class="filters" role="tablist" aria-label="Task filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="active">Active</button>
+          <button class="filter" data-filter="completed">Completed</button>
+        </div>
+
+        <div id="taskList" class="task-list"></div>
+        <div id="emptyState" class="empty-state">
+          <div>📝</div>
+          <h4>No tasks here</h4>
+          <p>Add a task above to start organizing your day.</p>
+        </div>
+      </div>
+
+      <aside class="panel tips-panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Productivity Tips</h3>
+            <p>Small habits make a difference.</p>
+          </div>
+        </div>
+        <div class="tip">
+          <span>1</span>
+          <div><strong>Prioritize</strong><p>Start with the task that has the biggest impact.</p></div>
+        </div>
+        <div class="tip">
+          <span>2</span>
+          <div><strong>Focus</strong><p>Work in short focused sessions and remove distractions.</p></div>
+        </div>
+        <div class="tip">
+          <span>3</span>
+          <div><strong>Review</strong><p>Check your completed tasks before ending the day.</p></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>TaskFlow • Built with HTML, CSS & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
